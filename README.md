@@ -55,6 +55,7 @@ The board integrates an ESP‑12F module, 5 V to 3.3 V regulation, LED panel con
 ### Board Layout
 <img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/hardware/images/LED-Panel-ESP12F-pcb-front.png" width="300" alt="LED-Panel-ESP12F PCB Front"/>
 <img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/hardware/images/LED-Panel-ESP12F-pcb-back.png" width="300" alt="LED-Panel-ESP12F PCB Back"/>
+<img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/images/LED-Panel-ESP12F.jpg" width="300" alt="LED-Panel-ESP12F Assembled PCB"/>
 
 ## Repository Structure
 
