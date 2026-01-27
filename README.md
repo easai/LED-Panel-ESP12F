@@ -57,20 +57,39 @@ The board integrates an ESP‑12F module, 5 V to 3.3 V regulation, LED panel con
 <img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/hardware/images/LED-Panel-ESP12F-pcb-back.png" width="300" alt="LED-Panel-ESP12F PCB Back"/>
 <img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/images/LED-Panel-ESP12F.jpg" width="300" alt="LED-Panel-ESP12F Assembled PCB"/>
 
+## Software
+
+This firmware provides a stable demonstration of the ESP12F board and verifies that the PCB, power routing, and peripherals operate correctly. The program in main.cpp is structured around predictable, nonblocking timing and focuses on hardware validation rather than feature development.
+
+### Boot and Initialization
+The program configures all required GPIO pins for the LED panel, buzzer, mute switch, and status LED. It initializes the MAX7219 driver, clears the display, and starts serial output for debugging. This confirms that the ESP12F boots correctly after flashing.
+
+### LED Panel Operation
+The MAX7219 driver is initialized, and the panel is updated at fixed intervals using timestamp checks instead of delay. A simple pattern or text is shown to verify panel wiring, power stability, and refresh behavior. The update routine is nonblocking, so the device remains responsive.
+
+### Buzzer and Mute Button
+The buzzer is controlled through a digital output pin. The mute button is read continuously and suppresses buzzer output when pressed. This logic runs without blocking the main loop and confirms the correct routing of the switch and buzzer.
+
+### WiFi Startup
+WiFi initialization is included to confirm that the module boots into the correct mode and that RF components are functional. Connection status is printed to serial. No network features are implemented in this version.
+
+### Main Loop Structure
+The loop uses millisecond timestamps to schedule tasks. LED updates, button reads, and buzzer logic run at defined intervals. No blocking delays are used. This structure ensures reproducible behavior and provides a foundation for future animation or network features.
+
+### Purpose of This Version
+This firmware is intended for hardware validation. It confirms correct boot behavior, verifies the LED panel, buzzer, and button, and establishes a stable base for future development.
+
+
 ## Repository Structure
 
-hardware/kicad/ contains the KiCad schematic and PCB files  
-hardware/fabrication/ contains Gerbers, BOM
-hardware/images/ contains schematic, PCB front/back, prototype wiring, and assembled PCB images  
-README.md is this document
+- hardware/kicad/ contains the KiCad schematic and PCB files  
+- hardware/fabrication/ contains Gerbers, BOM
+- hardware/images/ contains schematic, PCB front/back, prototype wiring, and assembled PCB images  
+- README.md is this document
 
 ## Bill of Materials
 
 A complete BOM is available in <a href="https://github.com/easai/LED-Panel-ESP12F/blob/main/hardware/fabrication/LED-Panel-ESP12F-bom.csv" target="_blank" title="LED-Panel-ESP12F BOM">hardware/fabrication/LED-Panel-ESP12F-bom.csv</a>.
-
-## Firmware
-
-The firmware will be rewritten and updated in this repository. The current version demonstrates correct boot behavior, successful program upload, LED panel operation, and buzzer functionality. Future updates will include a cleaner structure and expanded features.
 
 ## Credits
 
