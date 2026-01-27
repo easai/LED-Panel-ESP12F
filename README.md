@@ -1,7 +1,7 @@
 # LED Panel ESP‑12F
 
 The HTML page is available in this GitHub repository:
-[https://github.com/easai/LED-Panel-ESP12F](https://github.com/easai/LED-Panel-ESP12F)
+[https://easai.github.io/LED-Panel-ESP12F/](https://easai.github.io/LED-Panel-ESP12F/)
 
 A compact ESP‑12F–based controller board designed to drive an 8×8 LED panel with an onboard buzzer, stable power regulation, and reliable programming support. This project was completed with the generous support of my sponsor, whose fabrication assistance transformed a fragile prototype into a robust, reproducible hardware platform.
 
