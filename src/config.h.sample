@@ -1,0 +1,20 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define SECRET_SSID    "<Your SSID>"
+#define SECRET_PASS    "<Your WiFi Password>"
+#define SITE_URL       "<Your Site URL>"
+
+// ============== Optional Overrides ==============
+// Uncomment and modify to override defaults in main.cpp
+
+// Check interval in milliseconds (default: 30000 = 30 seconds)
+// #define CUSTOM_CHECK_INTERVAL 60000
+
+// Display brightness 0-15 (default: 2)
+// #define CUSTOM_INTENSITY 5
+
+// Scroll speed - lower is faster (default: 40)
+// #define CUSTOM_SCROLL_SPEED 30
+
+#endif
