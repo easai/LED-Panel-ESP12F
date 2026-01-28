@@ -542,7 +542,7 @@
             <div class="text-center mb-16">
                 <span class="inline-block px-4 py-1 bg-pcb-copper/20 border border-pcb-copper/30 rounded-full text-sm font-mono text-pcb-gold mb-4">Firmware</span>
                 <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Software</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">The firmware provides stable demonstration of the ESP12F board, verifying PCB, power routing, and peripherals operate correctly.</p>
+                <p class="text-gray-400 max-w-2xl mx-auto">Optimized firmware with PROGMEM strings, WiFi reconnection, debounced mute, and configurable intervals.</p>
             </div>
             
             <!-- Software Features - Interactive -->
@@ -552,17 +552,17 @@
                     
                     <div class="space-y-4">
                         <div class="glass-card rounded-xl p-5 cursor-pointer transition-all duration-300"
-                             :class="activeSection === 'includes' ? 'ring-2 ring-blue-400 bg-blue-500/10' : 'hover:bg-pcb-green/20'"
-                             @click="scrollToSection('includes')">
+                             :class="activeSection === 'config' ? 'ring-2 ring-blue-400 bg-blue-500/10' : 'hover:bg-pcb-green/20'"
+                             @click="scrollToSection('config')">
                             <div class="flex items-start gap-4">
                                 <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors"
-                                     :class="activeSection === 'includes' ? 'bg-blue-500/30' : 'bg-blue-500/20'">
-                                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                                     :class="activeSection === 'config' ? 'bg-blue-500/30' : 'bg-blue-500/20'">
+                                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold mb-1">Includes & Definitions</h4>
-                                    <p class="text-gray-400 text-sm">Library imports, hardware configuration, and pin definitions.</p>
-                                    <span class="text-xs text-gray-500 font-mono mt-1 inline-block">Lines 1-27</span>
+                                    <h4 class="font-display font-bold mb-1">Configuration & State</h4>
+                                    <p class="text-gray-400 text-sm">Timing constants, pin definitions, PROGMEM strings, and state struct.</p>
+                                    <span class="text-xs text-gray-500 font-mono mt-1 inline-block">Lines 1-45</span>
                                 </div>
                             </div>
                         </div>
@@ -576,9 +576,9 @@
                                     <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold mb-1">Site Check Function</h4>
-                                    <p class="text-gray-400 text-sm">HTTPS request to monitor website status with timeout handling.</p>
-                                    <span class="text-xs text-gray-500 font-mono mt-1 inline-block">Lines 28-57</span>
+                                    <h4 class="font-display font-bold mb-1">Site Check & WiFi</h4>
+                                    <p class="text-gray-400 text-sm">BearSSL HTTPS requests, WiFi reconnection handling.</p>
+                                    <span class="text-xs text-gray-500 font-mono mt-1 inline-block">Lines 47-85</span>
                                 </div>
                             </div>
                         </div>
@@ -592,9 +592,9 @@
                                     <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold mb-1">Setup & WiFi Init</h4>
-                                    <p class="text-gray-400 text-sm">GPIO configuration, LED panel init, and WiFi connection.</p>
-                                    <span class="text-xs text-gray-500 font-mono mt-1 inline-block">Lines 59-93</span>
+                                    <h4 class="font-display font-bold mb-1">Setup Functions</h4>
+                                    <p class="text-gray-400 text-sm">Pin setup, display init, WiFi connection with timeout.</p>
+                                    <span class="text-xs text-gray-500 font-mono mt-1 inline-block">Lines 87-115</span>
                                 </div>
                             </div>
                         </div>
@@ -608,9 +608,9 @@
                                     <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold mb-1">Main Loop</h4>
-                                    <p class="text-gray-400 text-sm">Non-blocking loop with mute toggle and site monitoring.</p>
-                                    <span class="text-xs text-gray-500 font-mono mt-1 inline-block">Lines 95-143</span>
+                                    <h4 class="font-display font-bold mb-1">Main Loop & Handlers</h4>
+                                    <p class="text-gray-400 text-sm">Debounced mute toggle, periodic checks, status display.</p>
+                                    <span class="text-xs text-gray-500 font-mono mt-1 inline-block">Lines 117-155</span>
                                 </div>
                             </div>
                         </div>
@@ -620,153 +620,167 @@
                 <!-- Code Preview - Scrollable -->
                 <div class="code-block rounded-xl overflow-hidden flex flex-col" style="max-height: 480px;">
                     <div class="flex items-center justify-between p-4 border-b border-gray-700/50 flex-shrink-0">
-                        <span class="font-mono text-sm text-gray-400">main.cpp</span>
-                        <span class="text-xs text-gray-500" x-text="activeSection ? sectionNames[activeSection] : '143 lines'"></span>
+                        <span class="font-mono text-sm text-gray-400">main.cpp <span class="text-green-400 text-xs ml-2">optimized v2.0</span></span>
+                        <span class="text-xs text-gray-500" x-text="activeSection ? sectionNames[activeSection] : '155 lines'"></span>
                     </div>
                     <div class="overflow-y-auto flex-1 p-4" id="code-container" x-ref="codeContainer">
-                        <pre class="text-sm"><code class="font-mono text-gray-300 leading-relaxed"><span id="code-includes" class="code-section transition-all duration-300" :class="activeSection === 'includes' ? 'bg-blue-500/20 -mx-4 px-4 block rounded' : ''"><span class="text-gray-500">  1</span>  <span class="text-purple-400">#include</span> <span class="text-green-400">&lt;ESP8266WiFi.h&gt;</span>
-<span class="text-gray-500">  2</span>  <span class="text-purple-400">#include</span> <span class="text-green-400">&lt;ESP8266HTTPClient.h&gt;</span>
-<span class="text-gray-500">  3</span>  <span class="text-purple-400">#include</span> <span class="text-green-400">&lt;MD_Parola.h&gt;</span>
-<span class="text-gray-500">  4</span>  <span class="text-purple-400">#include</span> <span class="text-green-400">&lt;MD_MAX72XX.h&gt;</span>
-<span class="text-gray-500">  5</span>  <span class="text-purple-400">#include</span> <span class="text-green-400">&lt;SPI.h&gt;</span>
+                        <pre class="text-sm"><code class="font-mono text-gray-300 leading-relaxed"><span id="code-config" class="code-section transition-all duration-300" :class="activeSection === 'config' ? 'bg-blue-500/20 -mx-4 px-4 block rounded' : ''"><span class="text-gray-500">  1</span>  <span class="text-gray-500">// LED-Panel-ESP12F - Optimized Firmware v2.0</span>
+<span class="text-gray-500">  2</span>  <span class="text-purple-400">#include</span> <span class="text-green-400">&lt;ESP8266WiFi.h&gt;</span>
+<span class="text-gray-500">  3</span>  <span class="text-purple-400">#include</span> <span class="text-green-400">&lt;ESP8266HTTPClient.h&gt;</span>
+<span class="text-gray-500">  4</span>  <span class="text-purple-400">#include</span> <span class="text-green-400">&lt;WiFiClientSecureBearSSL.h&gt;</span>
+<span class="text-gray-500">  5</span>  <span class="text-purple-400">#include</span> <span class="text-green-400">&lt;MD_Parola.h&gt;</span>
 <span class="text-gray-500">  6</span>  <span class="text-purple-400">#include</span> <span class="text-green-400">"config.h"</span>
 <span class="text-gray-500">  7</span>  
-<span class="text-gray-500">  8</span>  <span class="text-purple-400">#define</span> <span class="text-yellow-400">HARDWARE_TYPE</span> MD_MAX72XX::FC16_HW
-<span class="text-gray-500">  9</span>  <span class="text-purple-400">#define</span> <span class="text-yellow-400">MAX_DEVICES</span> <span class="text-blue-400">4</span>
-<span class="text-gray-500"> 10</span>  <span class="text-purple-400">#define</span> <span class="text-yellow-400">CS_PIN</span> <span class="text-blue-400">12</span>
-<span class="text-gray-500"> 11</span>  
-<span class="text-gray-500"> 12</span>  MD_Parola P = <span class="text-yellow-400">MD_Parola</span>(HARDWARE_TYPE, CS_PIN, MAX_DEVICES);
-<span class="text-gray-500"> 13</span>  
-<span class="text-gray-500"> 14</span>  <span class="text-purple-400">char</span> ssid[] = SECRET_SSID;
-<span class="text-gray-500"> 15</span>  <span class="text-purple-400">char</span> password[] = SECRET_PASS;
-<span class="text-gray-500"> 16</span>  <span class="text-purple-400">char</span> url[] = SITE_URL;
-<span class="text-gray-500"> 17</span>  
-<span class="text-gray-500"> 18</span>  <span class="text-purple-400">const int</span> <span class="text-yellow-400">BUZZ</span> = <span class="text-blue-400">4</span>;  <span class="text-gray-500">// buzzer pin</span>
-<span class="text-gray-500"> 19</span>  <span class="text-purple-400">const int</span> <span class="text-yellow-400">SW</span> = <span class="text-blue-400">5</span>;    <span class="text-gray-500">// switch pin</span>
+<span class="text-gray-500">  8</span>  <span class="text-gray-500">// ============== Configuration ==============</span>
+<span class="text-gray-500">  9</span>  <span class="text-purple-400">#define</span> <span class="text-yellow-400">HARDWARE_TYPE</span>   MD_MAX72XX::FC16_HW
+<span class="text-gray-500"> 10</span>  <span class="text-purple-400">#define</span> <span class="text-yellow-400">MAX_DEVICES</span>     <span class="text-blue-400">4</span>
+<span class="text-gray-500"> 11</span>  <span class="text-purple-400">#define</span> <span class="text-yellow-400">CS_PIN</span>          <span class="text-blue-400">12</span>
+<span class="text-gray-500"> 12</span>  <span class="text-purple-400">#define</span> <span class="text-yellow-400">BUZZ_PIN</span>        <span class="text-blue-400">4</span>
+<span class="text-gray-500"> 13</span>  <span class="text-purple-400">#define</span> <span class="text-yellow-400">MUTE_PIN</span>        <span class="text-blue-400">5</span>
+<span class="text-gray-500"> 14</span>  
+<span class="text-gray-500"> 15</span>  <span class="text-gray-500">// Timing constants (milliseconds)</span>
+<span class="text-gray-500"> 16</span>  <span class="text-purple-400">constexpr</span> <span class="text-purple-400">uint32_t</span> <span class="text-yellow-400">CHECK_INTERVAL</span>  = <span class="text-blue-400">30000</span>;
+<span class="text-gray-500"> 17</span>  <span class="text-purple-400">constexpr</span> <span class="text-purple-400">uint32_t</span> <span class="text-yellow-400">WIFI_TIMEOUT</span>    = <span class="text-blue-400">15000</span>;
+<span class="text-gray-500"> 18</span>  <span class="text-purple-400">constexpr</span> <span class="text-purple-400">uint32_t</span> <span class="text-yellow-400">HTTP_TIMEOUT</span>    = <span class="text-blue-400">5000</span>;
+<span class="text-gray-500"> 19</span>  <span class="text-purple-400">constexpr</span> <span class="text-purple-400">uint32_t</span> <span class="text-yellow-400">DEBOUNCE_DELAY</span>  = <span class="text-blue-400">200</span>;
 <span class="text-gray-500"> 20</span>  
-<span class="text-gray-500"> 21</span>  <span class="text-purple-400">volatile bool</span> beepEnabled = <span class="text-blue-400">true</span>;
-<span class="text-gray-500"> 22</span>  <span class="text-purple-400">volatile bool</span> toggleRequest = <span class="text-blue-400">false</span>;
-<span class="text-gray-500"> 23</span>  
-<span class="text-gray-500"> 24</span>  <span class="text-purple-400">unsigned long</span> lastCheck = <span class="text-blue-400">0</span>;
-<span class="text-gray-500"> 25</span>  <span class="text-purple-400">bool</span> lastUp = <span class="text-blue-400">true</span>;
-<span class="text-gray-500"> 26</span>  <span class="text-purple-400">bool</span> wifiMessageDone = <span class="text-blue-400">false</span>;
-<span class="text-gray-500"> 27</span>  </span>
-<span id="code-checksite" class="code-section transition-all duration-300" :class="activeSection === 'checksite' ? 'bg-purple-500/20 -mx-4 px-4 block rounded' : ''"><span class="text-gray-500"> 28</span>  <span class="text-purple-400">bool</span> <span class="text-yellow-400">checkSite</span>()
-<span class="text-gray-500"> 29</span>  {
-<span class="text-gray-500"> 30</span>      HTTPClient http;
-<span class="text-gray-500"> 31</span>      WiFiClientSecure client;
-<span class="text-gray-500"> 32</span>      client.<span class="text-yellow-400">setInsecure</span>();
-<span class="text-gray-500"> 33</span>  
-<span class="text-gray-500"> 34</span>      http.<span class="text-yellow-400">setTimeout</span>(<span class="text-blue-400">5000</span>);
-<span class="text-gray-500"> 35</span>      <span class="text-purple-400">if</span> (!http.<span class="text-yellow-400">begin</span>(client, url))
-<span class="text-gray-500"> 36</span>          <span class="text-purple-400">return</span> <span class="text-blue-400">false</span>;
-<span class="text-gray-500"> 37</span>  
-<span class="text-gray-500"> 38</span>      <span class="text-purple-400">int</span> code = http.<span class="text-yellow-400">GET</span>();
-<span class="text-gray-500"> 39</span>      http.<span class="text-yellow-400">end</span>();
+<span class="text-gray-500"> 21</span>  <span class="text-gray-500">// PROGMEM Strings (saves RAM)</span>
+<span class="text-gray-500"> 22</span>  <span class="text-purple-400">const char</span> MSG_WIFI_OK[] <span class="text-cyan-400">PROGMEM</span> = <span class="text-green-400">"WiFi OK"</span>;
+<span class="text-gray-500"> 23</span>  <span class="text-purple-400">const char</span> MSG_WIFI_ERR[] <span class="text-cyan-400">PROGMEM</span> = <span class="text-green-400">"WiFi Err"</span>;
+<span class="text-gray-500"> 24</span>  <span class="text-purple-400">const char</span> MSG_PING[] <span class="text-cyan-400">PROGMEM</span> = <span class="text-green-400">"Pinging..."</span>;
+<span class="text-gray-500"> 25</span>  <span class="text-purple-400">const char</span> MSG_SITE_UP[] <span class="text-cyan-400">PROGMEM</span> = <span class="text-green-400">"All Good!"</span>;
+<span class="text-gray-500"> 26</span>  <span class="text-purple-400">const char</span> MSG_SITE_DOWN[] <span class="text-cyan-400">PROGMEM</span> = <span class="text-green-400">"SITE DOWN!"</span>;
+<span class="text-gray-500"> 27</span>  <span class="text-purple-400">const char</span> MSG_MUTED[] <span class="text-cyan-400">PROGMEM</span> = <span class="text-green-400">"Muted"</span>;
+<span class="text-gray-500"> 28</span>  <span class="text-purple-400">const char</span> MSG_UNMUTED[] <span class="text-cyan-400">PROGMEM</span> = <span class="text-green-400">"Sound On"</span>;
+<span class="text-gray-500"> 29</span>  
+<span class="text-gray-500"> 30</span>  MD_Parola display = <span class="text-yellow-400">MD_Parola</span>(HARDWARE_TYPE, CS_PIN, MAX_DEVICES);
+<span class="text-gray-500"> 31</span>  
+<span class="text-gray-500"> 32</span>  <span class="text-gray-500">// State management</span>
+<span class="text-gray-500"> 33</span>  <span class="text-purple-400">struct</span> <span class="text-yellow-400">State</span> {
+<span class="text-gray-500"> 34</span>      <span class="text-purple-400">bool</span>     isMuted          = <span class="text-blue-400">false</span>;
+<span class="text-gray-500"> 35</span>      <span class="text-purple-400">bool</span>     siteIsUp         = <span class="text-blue-400">true</span>;
+<span class="text-gray-500"> 36</span>      <span class="text-purple-400">bool</span>     wifiConnected    = <span class="text-blue-400">false</span>;
+<span class="text-gray-500"> 37</span>      <span class="text-purple-400">uint32_t</span> lastCheckTime    = <span class="text-blue-400">0</span>;
+<span class="text-gray-500"> 38</span>      <span class="text-purple-400">uint32_t</span> lastButtonPress  = <span class="text-blue-400">0</span>;
+<span class="text-gray-500"> 39</span>  } state;
 <span class="text-gray-500"> 40</span>  
-<span class="text-gray-500"> 41</span>      <span class="text-purple-400">if</span> (code &lt;= <span class="text-blue-400">0</span>)
-<span class="text-gray-500"> 42</span>          <span class="text-purple-400">return</span> <span class="text-blue-400">false</span>;
+<span class="text-gray-500"> 41</span>  <span class="text-purple-400">volatile bool</span> muteToggleRequest = <span class="text-blue-400">false</span>;
+<span class="text-gray-500"> 42</span>  <span class="text-purple-400">char</span> msgBuffer[<span class="text-blue-400">32</span>];
 <span class="text-gray-500"> 43</span>  
-<span class="text-gray-500"> 44</span>      <span class="text-purple-400">return</span> (code &lt; <span class="text-blue-400">500</span>);
-<span class="text-gray-500"> 45</span>  }
-<span class="text-gray-500"> 46</span>  
-<span class="text-gray-500"> 47</span>  <span class="text-purple-400">void</span> <span class="text-yellow-400">showMessage</span>(<span class="text-purple-400">const char</span> *msg)
-<span class="text-gray-500"> 48</span>  {
-<span class="text-gray-500"> 49</span>      P.<span class="text-yellow-400">displayClear</span>();
-<span class="text-gray-500"> 50</span>      P.<span class="text-yellow-400">displayText</span>(msg, PA_CENTER, <span class="text-blue-400">40</span>, <span class="text-blue-400">0</span>, PA_SCROLL_LEFT, PA_SCROLL_LEFT);
-<span class="text-gray-500"> 51</span>      P.<span class="text-yellow-400">displayReset</span>();
-<span class="text-gray-500"> 52</span>  }
+<span class="text-gray-500"> 44</span>  <span class="text-purple-400">void</span> <span class="text-cyan-400">IRAM_ATTR</span> <span class="text-yellow-400">onMuteButtonPress</span>() {
+<span class="text-gray-500"> 45</span>      muteToggleRequest = <span class="text-blue-400">true</span>;
+<span class="text-gray-500"> 46</span>  }
+</span>
+<span id="code-checksite" class="code-section transition-all duration-300" :class="activeSection === 'checksite' ? 'bg-purple-500/20 -mx-4 px-4 block rounded' : ''"><span class="text-gray-500"> 47</span>  
+<span class="text-gray-500"> 48</span>  <span class="text-gray-500">// ============== Site Check ==============</span>
+<span class="text-gray-500"> 49</span>  <span class="text-purple-400">bool</span> <span class="text-yellow-400">checkSiteStatus</span>() {
+<span class="text-gray-500"> 50</span>      std::unique_ptr&lt;BearSSL::WiFiClientSecure&gt; client(
+<span class="text-gray-500"> 51</span>          <span class="text-purple-400">new</span> BearSSL::WiFiClientSecure);
+<span class="text-gray-500"> 52</span>      client-&gt;<span class="text-yellow-400">setInsecure</span>();
 <span class="text-gray-500"> 53</span>  
-<span class="text-gray-500"> 54</span>  <span class="text-purple-400">void</span> <span class="text-cyan-400">IRAM_ATTR</span> <span class="text-yellow-400">handleSwitch</span>()
-<span class="text-gray-500"> 55</span>  {
-<span class="text-gray-500"> 56</span>      toggleRequest = <span class="text-blue-400">true</span>;
-<span class="text-gray-500"> 57</span>  }
-<span class="text-gray-500"> 58</span>  </span>
-<span id="code-setup" class="code-section transition-all duration-300" :class="activeSection === 'setup' ? 'bg-green-500/20 -mx-4 px-4 block rounded' : ''"><span class="text-gray-500"> 59</span>  <span class="text-purple-400">void</span> <span class="text-yellow-400">setup</span>()
-<span class="text-gray-500"> 60</span>  {
-<span class="text-gray-500"> 61</span>      <span class="text-yellow-400">pinMode</span>(BUZZ, OUTPUT);
-<span class="text-gray-500"> 62</span>      <span class="text-yellow-400">pinMode</span>(SW, INPUT_PULLUP);
-<span class="text-gray-500"> 63</span>  
-<span class="text-gray-500"> 64</span>      <span class="text-yellow-400">attachInterrupt</span>(<span class="text-yellow-400">digitalPinToInterrupt</span>(SW), handleSwitch, FALLING);
-<span class="text-gray-500"> 65</span>  
-<span class="text-gray-500"> 66</span>      P.<span class="text-yellow-400">begin</span>();
-<span class="text-gray-500"> 67</span>      P.<span class="text-yellow-400">setIntensity</span>(<span class="text-blue-400">2</span>);
-<span class="text-gray-500"> 68</span>      P.<span class="text-yellow-400">displayClear</span>();
-<span class="text-gray-500"> 69</span>      <span class="text-yellow-400">delay</span>(<span class="text-blue-400">300</span>);
-<span class="text-gray-500"> 70</span>  
-<span class="text-gray-500"> 71</span>      <span class="text-gray-500">// WiFi connect message ONCE</span>
-<span class="text-gray-500"> 72</span>      <span class="text-yellow-400">showMessage</span>(<span class="text-green-400">"Wifi..."</span>);
-<span class="text-gray-500"> 73</span>  
-<span class="text-gray-500"> 74</span>      WiFi.<span class="text-yellow-400">mode</span>(WIFI_STA);
-<span class="text-gray-500"> 75</span>      WiFi.<span class="text-yellow-400">begin</span>(ssid, password);
-<span class="text-gray-500"> 76</span>  
-<span class="text-gray-500"> 77</span>      <span class="text-purple-400">unsigned long</span> start = <span class="text-yellow-400">millis</span>();
-<span class="text-gray-500"> 78</span>      <span class="text-purple-400">while</span> (WiFi.<span class="text-yellow-400">status</span>() != WL_CONNECTED && <span class="text-yellow-400">millis</span>() - start &lt; <span class="text-blue-400">15000</span>)
-<span class="text-gray-500"> 79</span>          <span class="text-yellow-400">delay</span>(<span class="text-blue-400">200</span>);
-<span class="text-gray-500"> 80</span>  
-<span class="text-gray-500"> 81</span>      <span class="text-purple-400">if</span> (WiFi.<span class="text-yellow-400">status</span>() != WL_CONNECTED)
-<span class="text-gray-500"> 82</span>      {
-<span class="text-gray-500"> 83</span>          <span class="text-yellow-400">showMessage</span>(<span class="text-green-400">"Wifi error"</span>);
-<span class="text-gray-500"> 84</span>          <span class="text-yellow-400">tone</span>(BUZZ, <span class="text-blue-400">2000</span>);
-<span class="text-gray-500"> 85</span>          <span class="text-yellow-400">delay</span>(<span class="text-blue-400">3000</span>);
-<span class="text-gray-500"> 86</span>          <span class="text-yellow-400">noTone</span>(BUZZ);
-<span class="text-gray-500"> 87</span>          wifiMessageDone = <span class="text-blue-400">true</span>;
-<span class="text-gray-500"> 88</span>          <span class="text-purple-400">return</span>;
-<span class="text-gray-500"> 89</span>      }
-<span class="text-gray-500"> 90</span>  
-<span class="text-gray-500"> 91</span>      <span class="text-yellow-400">showMessage</span>(<span class="text-green-400">"Wifi ok"</span>);
-<span class="text-gray-500"> 92</span>      wifiMessageDone = <span class="text-blue-400">true</span>;
-<span class="text-gray-500"> 93</span>  }
-<span class="text-gray-500"> 94</span>  </span>
-<span id="code-loop" class="code-section transition-all duration-300" :class="activeSection === 'loop' ? 'bg-yellow-500/20 -mx-4 px-4 block rounded' : ''"><span class="text-gray-500"> 95</span>  <span class="text-purple-400">void</span> <span class="text-yellow-400">loop</span>()
-<span class="text-gray-500"> 96</span>  {
-<span class="text-gray-500"> 97</span>      <span class="text-gray-500">// Handle switch toggle</span>
-<span class="text-gray-500"> 98</span>      <span class="text-purple-400">if</span> (toggleRequest)
-<span class="text-gray-500"> 99</span>      {
-<span class="text-gray-500">100</span>          toggleRequest = <span class="text-blue-400">false</span>;
-<span class="text-gray-500">101</span>          beepEnabled = !beepEnabled;
-<span class="text-gray-500">102</span>          <span class="text-purple-400">if</span> (!beepEnabled)
-<span class="text-gray-500">103</span>              <span class="text-yellow-400">noTone</span>(BUZZ);
-<span class="text-gray-500">104</span>      }
+<span class="text-gray-500"> 54</span>      HTTPClient http;
+<span class="text-gray-500"> 55</span>      http.<span class="text-yellow-400">setTimeout</span>(HTTP_TIMEOUT);
+<span class="text-gray-500"> 56</span>      http.<span class="text-yellow-400">setFollowRedirects</span>(HTTPC_STRICT_FOLLOW_REDIRECTS);
+<span class="text-gray-500"> 57</span>  
+<span class="text-gray-500"> 58</span>      <span class="text-purple-400">if</span> (!http.<span class="text-yellow-400">begin</span>(*client, SITE_URL))
+<span class="text-gray-500"> 59</span>          <span class="text-purple-400">return</span> <span class="text-blue-400">false</span>;
+<span class="text-gray-500"> 60</span>  
+<span class="text-gray-500"> 61</span>      http.<span class="text-yellow-400">addHeader</span>(<span class="text-green-400">"User-Agent"</span>, <span class="text-green-400">"ESP8266-Monitor/2.0"</span>);
+<span class="text-gray-500"> 62</span>      <span class="text-purple-400">int</span> httpCode = http.<span class="text-yellow-400">GET</span>();
+<span class="text-gray-500"> 63</span>      http.<span class="text-yellow-400">end</span>();
+<span class="text-gray-500"> 64</span>  
+<span class="text-gray-500"> 65</span>      <span class="text-purple-400">return</span> (httpCode &gt; <span class="text-blue-400">0</span> && httpCode &lt; <span class="text-blue-400">500</span>);
+<span class="text-gray-500"> 66</span>  }
+<span class="text-gray-500"> 67</span>  
+<span class="text-gray-500"> 68</span>  <span class="text-gray-500">// ============== WiFi Management ==============</span>
+<span class="text-gray-500"> 69</span>  <span class="text-purple-400">bool</span> <span class="text-yellow-400">connectWiFi</span>() {
+<span class="text-gray-500"> 70</span>      WiFi.<span class="text-yellow-400">begin</span>(SECRET_SSID, SECRET_PASS);
+<span class="text-gray-500"> 71</span>      <span class="text-purple-400">uint32_t</span> start = <span class="text-yellow-400">millis</span>();
+<span class="text-gray-500"> 72</span>      
+<span class="text-gray-500"> 73</span>      <span class="text-purple-400">while</span> (WiFi.<span class="text-yellow-400">status</span>() != WL_CONNECTED) {
+<span class="text-gray-500"> 74</span>          <span class="text-purple-400">if</span> (<span class="text-yellow-400">millis</span>() - start &gt;= WIFI_TIMEOUT)
+<span class="text-gray-500"> 75</span>              <span class="text-purple-400">return</span> <span class="text-blue-400">false</span>;
+<span class="text-gray-500"> 76</span>          <span class="text-yellow-400">delay</span>(<span class="text-blue-400">100</span>);
+<span class="text-gray-500"> 77</span>          display.<span class="text-yellow-400">displayAnimate</span>();
+<span class="text-gray-500"> 78</span>      }
+<span class="text-gray-500"> 79</span>      <span class="text-purple-400">return</span> <span class="text-blue-400">true</span>;
+<span class="text-gray-500"> 80</span>  }
+<span class="text-gray-500"> 81</span>  
+<span class="text-gray-500"> 82</span>  <span class="text-purple-400">void</span> <span class="text-yellow-400">updateDisplay</span>(<span class="text-purple-400">const char</span>* msg) {
+<span class="text-gray-500"> 83</span>      <span class="text-yellow-400">strcpy_P</span>(msgBuffer, msg);
+<span class="text-gray-500"> 84</span>      display.<span class="text-yellow-400">displayText</span>(msgBuffer, PA_CENTER, <span class="text-blue-400">40</span>, <span class="text-blue-400">0</span>,
+<span class="text-gray-500"> 85</span>          PA_SCROLL_LEFT, PA_SCROLL_LEFT);
+<span class="text-gray-500"> 86</span>  }
+</span>
+<span id="code-setup" class="code-section transition-all duration-300" :class="activeSection === 'setup' ? 'bg-green-500/20 -mx-4 px-4 block rounded' : ''"><span class="text-gray-500"> 87</span>  
+<span class="text-gray-500"> 88</span>  <span class="text-gray-500">// ============== Setup ==============</span>
+<span class="text-gray-500"> 89</span>  <span class="text-purple-400">void</span> <span class="text-yellow-400">setup</span>() {
+<span class="text-gray-500"> 90</span>      <span class="text-yellow-400">pinMode</span>(BUZZ_PIN, OUTPUT);
+<span class="text-gray-500"> 91</span>      <span class="text-yellow-400">pinMode</span>(MUTE_PIN, INPUT_PULLUP);
+<span class="text-gray-500"> 92</span>      <span class="text-yellow-400">attachInterrupt</span>(<span class="text-yellow-400">digitalPinToInterrupt</span>(MUTE_PIN),
+<span class="text-gray-500"> 93</span>          onMuteButtonPress, FALLING);
+<span class="text-gray-500"> 94</span>  
+<span class="text-gray-500"> 95</span>      display.<span class="text-yellow-400">begin</span>();
+<span class="text-gray-500"> 96</span>      display.<span class="text-yellow-400">setIntensity</span>(<span class="text-blue-400">2</span>);
+<span class="text-gray-500"> 97</span>      display.<span class="text-yellow-400">displayClear</span>();
+<span class="text-gray-500"> 98</span>  
+<span class="text-gray-500"> 99</span>      WiFi.<span class="text-yellow-400">mode</span>(WIFI_STA);
+<span class="text-gray-500">100</span>      WiFi.<span class="text-yellow-400">setAutoReconnect</span>(<span class="text-blue-400">true</span>);
+<span class="text-gray-500">101</span>      WiFi.<span class="text-yellow-400">persistent</span>(<span class="text-blue-400">false</span>);  <span class="text-gray-500">// Reduce flash wear</span>
+<span class="text-gray-500">102</span>  
+<span class="text-gray-500">103</span>      <span class="text-yellow-400">updateDisplay</span>(MSG_WIFI_CONNECTING);
+<span class="text-gray-500">104</span>      state.wifiConnected = <span class="text-yellow-400">connectWiFi</span>();
 <span class="text-gray-500">105</span>  
-<span class="text-gray-500">106</span>      <span class="text-gray-500">// Run Parola animation continuously</span>
-<span class="text-gray-500">107</span>      <span class="text-purple-400">if</span> (P.<span class="text-yellow-400">displayAnimate</span>())
-<span class="text-gray-500">108</span>          P.<span class="text-yellow-400">displayReset</span>();
-<span class="text-gray-500">109</span>  
-<span class="text-gray-500">110</span>      <span class="text-gray-500">// After WiFi message finishes scrolling, clear panel ONCE</span>
-<span class="text-gray-500">111</span>      <span class="text-purple-400">if</span> (wifiMessageDone && P.<span class="text-yellow-400">displayAnimate</span>())
-<span class="text-gray-500">112</span>      {
-<span class="text-gray-500">113</span>          P.<span class="text-yellow-400">displayClear</span>();
-<span class="text-gray-500">114</span>          wifiMessageDone = <span class="text-blue-400">false</span>;
-<span class="text-gray-500">115</span>      }
-<span class="text-gray-500">116</span>  
-<span class="text-gray-500">117</span>      <span class="text-gray-500">// Periodic site check (every 30s)</span>
-<span class="text-gray-500">118</span>      <span class="text-purple-400">if</span> (<span class="text-yellow-400">millis</span>() - lastCheck &gt;= <span class="text-blue-400">30000</span>)
-<span class="text-gray-500">119</span>      {
-<span class="text-gray-500">120</span>          lastCheck = <span class="text-yellow-400">millis</span>();
-<span class="text-gray-500">121</span>  
-<span class="text-gray-500">122</span>          P.<span class="text-yellow-400">displayClear</span>();
-<span class="text-gray-500">123</span>          P.<span class="text-yellow-400">displayText</span>(<span class="text-green-400">"PING"</span>, PA_CENTER, <span class="text-blue-400">0</span>, <span class="text-blue-400">0</span>, PA_PRINT, PA_PRINT);
-<span class="text-gray-500">124</span>          P.<span class="text-yellow-400">displayReset</span>();
-<span class="text-gray-500">125</span>  
-<span class="text-gray-500">126</span>          <span class="text-purple-400">bool</span> up = <span class="text-yellow-400">checkSite</span>();
-<span class="text-gray-500">127</span>  
-<span class="text-gray-500">128</span>          <span class="text-purple-400">if</span> (up)
-<span class="text-gray-500">129</span>          {
-<span class="text-gray-500">130</span>              lastUp = <span class="text-blue-400">true</span>;
-<span class="text-gray-500">131</span>              <span class="text-yellow-400">noTone</span>(BUZZ);
-<span class="text-gray-500">132</span>              <span class="text-yellow-400">showMessage</span>(<span class="text-green-400">"UP"</span>);
-<span class="text-gray-500">133</span>          }
-<span class="text-gray-500">134</span>          <span class="text-purple-400">else</span>
-<span class="text-gray-500">135</span>          {
-<span class="text-gray-500">136</span>              lastUp = <span class="text-blue-400">false</span>;
-<span class="text-gray-500">137</span>              <span class="text-purple-400">if</span> (beepEnabled)
-<span class="text-gray-500">138</span>                  <span class="text-yellow-400">tone</span>(BUZZ, <span class="text-blue-400">2000</span>);
-<span class="text-gray-500">139</span>  
-<span class="text-gray-500">140</span>              <span class="text-yellow-400">showMessage</span>(<span class="text-green-400">"Error!!!"</span>);
-<span class="text-gray-500">141</span>          }
-<span class="text-gray-500">142</span>      }
-<span class="text-gray-500">143</span>  }</span></code></pre>
+<span class="text-gray-500">106</span>      <span class="text-purple-400">if</span> (state.wifiConnected) {
+<span class="text-gray-500">107</span>          <span class="text-yellow-400">updateDisplay</span>(MSG_WIFI_OK);
+<span class="text-gray-500">108</span>      } <span class="text-purple-400">else</span> {
+<span class="text-gray-500">109</span>          <span class="text-yellow-400">updateDisplay</span>(MSG_WIFI_ERR);
+<span class="text-gray-500">110</span>          <span class="text-yellow-400">tone</span>(BUZZ_PIN, <span class="text-blue-400">2000</span>);
+<span class="text-gray-500">111</span>          <span class="text-yellow-400">delay</span>(<span class="text-blue-400">1000</span>);
+<span class="text-gray-500">112</span>          <span class="text-yellow-400">noTone</span>(BUZZ_PIN);
+<span class="text-gray-500">113</span>      }
+<span class="text-gray-500">114</span>      state.lastCheckTime = <span class="text-yellow-400">millis</span>() - CHECK_INTERVAL + <span class="text-blue-400">5000</span>;
+<span class="text-gray-500">115</span>  }
+<span class="text-gray-500">116</span>  </span>
+<span id="code-loop" class="code-section transition-all duration-300" :class="activeSection === 'loop' ? 'bg-yellow-500/20 -mx-4 px-4 block rounded' : ''"><span class="text-gray-500">117</span>  <span class="text-gray-500">// ============== Main Loop ==============</span>
+<span class="text-gray-500">118</span>  <span class="text-purple-400">void</span> <span class="text-yellow-400">loop</span>() {
+<span class="text-gray-500">119</span>      display.<span class="text-yellow-400">displayAnimate</span>();
+<span class="text-gray-500">120</span>  
+<span class="text-gray-500">121</span>      <span class="text-gray-500">// Debounced mute toggle</span>
+<span class="text-gray-500">122</span>      <span class="text-purple-400">if</span> (muteToggleRequest) {
+<span class="text-gray-500">123</span>          <span class="text-purple-400">uint32_t</span> now = <span class="text-yellow-400">millis</span>();
+<span class="text-gray-500">124</span>          <span class="text-purple-400">if</span> (now - state.lastButtonPress &gt;= DEBOUNCE_DELAY) {
+<span class="text-gray-500">125</span>              state.lastButtonPress = now;
+<span class="text-gray-500">126</span>              state.isMuted = !state.isMuted;
+<span class="text-gray-500">127</span>              <span class="text-purple-400">if</span> (state.isMuted) {
+<span class="text-gray-500">128</span>                  <span class="text-yellow-400">noTone</span>(BUZZ_PIN);
+<span class="text-gray-500">129</span>                  <span class="text-yellow-400">updateDisplay</span>(MSG_MUTED);
+<span class="text-gray-500">130</span>              } <span class="text-purple-400">else</span> {
+<span class="text-gray-500">131</span>                  <span class="text-yellow-400">updateDisplay</span>(MSG_UNMUTED);
+<span class="text-gray-500">132</span>                  <span class="text-yellow-400">tone</span>(BUZZ_PIN, <span class="text-blue-400">1000</span>, <span class="text-blue-400">100</span>);  <span class="text-gray-500">// Confirm beep</span>
+<span class="text-gray-500">133</span>              }
+<span class="text-gray-500">134</span>          }
+<span class="text-gray-500">135</span>          muteToggleRequest = <span class="text-blue-400">false</span>;
+<span class="text-gray-500">136</span>      }
+<span class="text-gray-500">137</span>  
+<span class="text-gray-500">138</span>      <span class="text-gray-500">// Periodic site check</span>
+<span class="text-gray-500">139</span>      <span class="text-purple-400">uint32_t</span> now = <span class="text-yellow-400">millis</span>();
+<span class="text-gray-500">140</span>      <span class="text-purple-400">if</span> (state.wifiConnected && 
+<span class="text-gray-500">141</span>          (now - state.lastCheckTime &gt;= CHECK_INTERVAL)) {
+<span class="text-gray-500">142</span>          state.lastCheckTime = now;
+<span class="text-gray-500">143</span>  
+<span class="text-gray-500">144</span>          <span class="text-yellow-400">updateDisplay</span>(MSG_PING);
+<span class="text-gray-500">145</span>          <span class="text-purple-400">bool</span> isUp = <span class="text-yellow-400">checkSiteStatus</span>();
+<span class="text-gray-500">146</span>          state.siteIsUp = isUp;
+<span class="text-gray-500">147</span>  
+<span class="text-gray-500">148</span>          <span class="text-yellow-400">updateDisplay</span>(isUp ? MSG_SITE_UP : MSG_SITE_DOWN);
+<span class="text-gray-500">149</span>  
+<span class="text-gray-500">150</span>          <span class="text-purple-400">if</span> (!isUp && !state.isMuted)
+<span class="text-gray-500">151</span>              <span class="text-yellow-400">tone</span>(BUZZ_PIN, <span class="text-blue-400">2000</span>);
+<span class="text-gray-500">152</span>          <span class="text-purple-400">else</span>
+<span class="text-gray-500">153</span>              <span class="text-yellow-400">noTone</span>(BUZZ_PIN);
+<span class="text-gray-500">154</span>      }
+<span class="text-gray-500">155</span>  }</span></code></pre>
                     </div>
                 </div>
             </div>
@@ -1019,7 +1033,8 @@
             <div class="section-divider mb-8"></div>
             
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-                <p>© 2026 easai</p>
+                <p>© 2026 LED-Panel-ESP12F. Released under the MIT License.</p>
+                <p>Made with <span class="text-led-red">♥</span> by <a href="https://github.com/easai" target="_blank" class="text-pcb-copper hover:text-pcb-gold transition-colors">easai</a></p>
             </div>
         </div>
     </footer>
@@ -1040,10 +1055,10 @@
             return {
                 activeSection: null,
                 sectionNames: {
-                    'includes': 'Includes & Definitions',
-                    'checksite': 'Site Check Function',
-                    'setup': 'Setup & WiFi Init',
-                    'loop': 'Main Loop'
+                    'config': 'Configuration & State',
+                    'checksite': 'Site Check & WiFi',
+                    'setup': 'Setup Functions',
+                    'loop': 'Main Loop & Handlers'
                 },
                 
                 scrollToSection(section) {
