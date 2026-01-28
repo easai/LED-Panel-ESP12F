@@ -63,7 +63,7 @@ const char MSG_MUTED[]           PROGMEM = "Muted";
 const char MSG_UNMUTED[]         PROGMEM = "Sound On";
 
 // Site status messages
-const char MSG_SITE_UP[]   PROGMEM = "All Good!";
+const char MSG_SITE_UP[]   PROGMEM = "SITE OK";
 const char MSG_SITE_DOWN[] PROGMEM = "SITE DOWN!";
 
 // ============== Global State ==============
