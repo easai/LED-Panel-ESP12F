@@ -48,6 +48,16 @@ Once connected:
 
 The board will automatically reboot into normal operation after programming. This workflow ensures consistent flashing without the wiring errors common in breadboard prototypes.
 
+## Configuration
+
+Copy config.h.sample to config.h and fill in your network details.
+
+config.h contains:
+• SECRET_SSID for the WiFi network name
+• SECRET_PASS for the WiFi password
+• SITE_URL for the target endpoint
+
+config.h is not tracked in the repository. Users must create it before building the firmware.
 
 ## Hardware Overview
 
