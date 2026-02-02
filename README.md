@@ -104,6 +104,8 @@ This firmware is intended for hardware validation. It confirms correct boot beha
 
 ## Bill of Materials
 
+<img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/images/IMG_2877.jpeg" width="300" alt="LED Panel ESP12F Parts"/>
+
 A complete BOM is available in <a href="https://github.com/easai/LED-Panel-ESP12F/blob/main/hardware/fabrication/LED-Panel-ESP12F-bom.csv" target="_blank" title="LED-Panel-ESP12F BOM">hardware/fabrication/LED-Panel-ESP12F-bom.csv</a>.
 
 ## Credits
