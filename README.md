@@ -31,6 +31,8 @@ The ESP‑12F can be programmed directly through a USB‑to‑serial adapter suc
 
 To enter programming mode, the ESP‑12F requires specific boot pin states during reset. The PCB handles these automatically through pull‑ups and pull‑downs, so only four connections are needed from the FTDI adapter:
 
+<img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/images/wiring.gif" width="300" alt="LED-Panel-ESP12F Programming the ESP‑12F Using an FTDI Adapter Wiring" />
+
 Before uploading, connect the FTDI module to the programming header as shown below.
 
 • FTDI TX → Programming header TX  
