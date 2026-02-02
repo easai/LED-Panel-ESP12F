@@ -16,7 +16,10 @@ Their contribution directly improved electrical stability, mechanical reliabilit
 ### Before: Breadboard-based Prototype  
 The initial version worked, but the wiring was messy, fragile, and difficult to debug. It served its purpose for early validation, but it was not suitable for repeated use or documentation.  
 
+<div class="flex">
+<img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/images/LED-Panel-ESP12F-Demo.gif" alt="LED Panel ESP12F Demo" />
 <img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/images/IMG_2775.jpeg" width="300" alt="LED-Panel-ESP12F Prototype" />
+</div>
 
 ### After: Assembled PCB  
 The final PCB was fabricated by PCBWay, whose manufacturing quality made the design stable, durable, and easy to assemble. The board programs correctly, executes firmware without issues, and drives the LED panel and buzzer exactly as intended.  
