@@ -11,7 +11,7 @@ This project reached completion thanks to the support of <a href="https://www.pc
 
 Their contribution directly improved electrical stability, mechanical reliability, assembly clarity, and long‑term maintainability. The contrast between the prototype and the final board demonstrates the real value of proper PCB fabrication.
 
-## From breadboard prototype to PCB
+## Breadboard Prototype → PCB Assembly
 
 <img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/images/Prototype%20(5).png" alt="LED Panel ESP12F Demo" width="300"/>
 
