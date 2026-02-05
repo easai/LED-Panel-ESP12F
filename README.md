@@ -13,7 +13,7 @@ Their contribution directly improved electrical stability, mechanical reliabilit
 
 ## Breadboard Prototype → PCB Assembly
 
-<img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/images/Prototype%20(5).png" alt="LED Panel ESP12F Demo" width="300"/>
+<img src="https://github.com/easai/LED-Panel-ESP12F/blob/main/images/poster.png" alt="LED Panel ESP12F Demo" width="300"/>
 
 ### Before: Breadboard-based Prototype  
 The initial version worked, but the wiring was messy, fragile, and difficult to debug. It served its purpose for early validation, but it was not suitable for repeated use or documentation.  
